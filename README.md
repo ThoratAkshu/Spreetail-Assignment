@@ -1,130 +1,132 @@
-# 🧾 MerchTech Product Performance Dashboard
+# 🧾 Spreetail MerchTech Product Performance Dashboard
 
-This project is a lightweight **Django-based dashboard** that helps analyze product performance using sales, return, and review data.  
-It provides clear KPIs, visual charts, and smart insights to understand which products are performing well and which need improvement.
+A lightweight **Django-based analytics dashboard** that helps track and visualize **product performance** using sales, reviews, and return data.  
+It provides **key performance indicators (KPIs)**, visual insights, and intelligent suggestions to help identify which products are excelling and which need attention.
 
 ---
 
-## ⚙️ Project Setup
+## ⚙️ Initial Setup Guide
 
-Follow these simple steps to run the project locally:
+Follow these steps to set up and run the project locally.
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/merchtech-dashboard.git
-cd merchtech-dashboard
-2️⃣ Create a Virtual Environment
+git clone https://github.com/ThoratAkshu/Spreetail-Assignment.git
+cd Spreetail-Assignment
+2️⃣ Create and Activate a Virtual Environment
 bash
 Copy code
 python -m venv venv_backend
 venv_backend\Scripts\activate       # On Windows
 # OR
 source venv_backend/bin/activate    # On macOS/Linux
-3️⃣ Install Required Packages
+3️⃣ Install Dependencies
 bash
 Copy code
 pip install -r requirements.txt
-4️⃣ Apply Database Migrations
+4️⃣ Run Database Migrations
 bash
 Copy code
 cd backend
 python manage.py makemigrations
 python manage.py migrate
-5️⃣ Load Dataset
+5️⃣ Load the Dataset
 bash
 Copy code
 python manage.py load_kpis
-This command:
+This command will:
 
-Clears any old data
+Clear any old data
 
-Loads the dataset from sde2_merchtech_dataset.txt
+Load the dataset from sde2_merchtech_dataset.txt
 
-Aggregates sales, reviews, and returns
+Aggregate sales, returns, and reviews
 
-Automatically generates product insights and improvement suggestions
+Automatically generate product insights and suggested actions
 
-6️⃣ Run the Server
+6️⃣ Start the Development Server
 bash
 Copy code
 python manage.py runserver
-Now open your browser and visit:
+Then open your browser and go to:
 👉 http://127.0.0.1:8000/dashboard/
 
-📊 About the Dashboard
-The dashboard gives a simple and interactive view of how products are performing.
-It combines sales, reviews, and returns into one place so teams can take faster decisions.
+📊 Dashboard Overview
+The dashboard provides a clean, interactive view of product performance metrics.
+It helps business and tech teams make data-driven decisions faster.
 
 🧮 1. KPI Summary
-At the top of the dashboard, you’ll see quick statistics like:
+At the top of the dashboard, you'll see the main performance metrics:
 
 Metric	Description
-💰 Total GMV	The total sales amount for all products
-⭐ Average Rating	Average customer rating from all reviews
-⚠️ Total Returns (%)	Percentage of items returned out of total sold
-🛍️ Units Sold	Total number of items sold
+💰 Total GMV	Overall sales revenue
+⭐ Average Rating	Average product rating from all reviews
+⚠️ Total Returns (%)	Percentage of items returned
+🛍️ Units Sold	Total quantity of products sold
 
-Each card also shows a small arrow indicator (↑/↓) comparing it to the previous week.
+Each card includes trend indicators (↑ / ↓) comparing performance with the previous week.
 
-📸 Example:
+📸 Example Snapshot:
 
 📈 2. GMV Trend by Week
-A line chart shows weekly GMV (Gross Merchandise Value) for each product.
-It helps you track how performance is changing over time.
+Displays a line chart showing weekly GMV (Gross Merchandise Value).
+This helps you analyze how sales evolve week over week.
 
 📸 Example:
 
 🔁 3. Return Reason Breakdown
-A doughnut chart highlights the most common return reasons (like Late Delivery, Damaged Item, Size Mismatch).
-This makes it easy to see where problems occur most often.
+A doughnut chart highlights the most common return reasons such as:
+
+Damaged Item
+
+Late Delivery
+
+Wrong Item Sent
+
+Size Mismatch
 
 📸 Example:
 
 🧾 4. Product Insights Table
-Each product is listed with:
+Each product includes:
 
-ASIN and Product Name
+ASIN & Product Name
 
-GMV, Rating, and Total Returns
+GMV, Rating & Returns
 
-All reported issues (with count per reason)
+Return issue breakdown
 
-suggested actions to fix the problem
+Suggested corrective actions
 
-Example:
-
-Product	GMV	Rating	Returns	Issues	Suggested Action
-Vacuum Cleaner	$4,095	2.8	6.5%	Late delivery — 6	Optimize delivery partners and improve tracking.
-Office Chair	$3,978	3.0	8.0%	Damaged item — 4	Reinforce packaging and review handling process.
+Product	GMV	Rating	Returns	Common Issues	Suggested Action
+Vacuum Cleaner	$4,095	2.8	6.5%	Late Delivery — 6	Optimize delivery partners and tracking
+Office Chair	$3,978	3.0	8.0%	Damaged Item — 4	Improve packaging and QA
 
 📸 Example:
 
-🧠 5. Suggested Actions
-The system scans product reviews and return reasons to generate improvement ideas automatically.
+🧠 5. Automated Suggestions
+The system reads reviews and return reasons to generate meaningful insights.
 
-Some examples:
-
-If reviews mention “late delivery” → Optimize logistics and courier partners.
-
-If customers say “defective product” → Improve quality checks and pre-shipment testing.
-
-If ratings are below 3 → Investigate recurring complaints and fix root causes.
+Condition	Suggested Action
+Low Rating (<3)	Investigate product quality or recurring complaints
+“Late Delivery” in reviews	Optimize logistics & courier partners
+“Defective Item” in returns	Strengthen pre-shipment testing & QC
 
 📸 Example:
 
 📤 6. Export Reports
-You can download full reports in two formats:
+Easily export your reports for analysis or sharing:
 
-📊 CSV Export – Simple data sheet with all KPIs and issues.
+📊 CSV Export → Tabular KPIs and issue breakdown
 
-🧾 PDF Export – Nicely formatted report with wrapped text and alternating colors.
+🧾 PDF Export → Styled report with formatted tables and text wrapping
 
 📸 Example:
 
-📂 Folder Structure
+📂 Project Structure
 bash
 Copy code
-merchtech-dashboard/
+Spreetail-Assignment/
 │
 ├── backend/
 │   ├── manage.py
@@ -141,23 +143,17 @@ merchtech-dashboard/
 │   └── static/dashboard.css
 │
 ├── requirements.txt
-│
 └── README.md
 🚀 Key Highlights
-Clean and simple Bootstrap-based UI
+✅ Clean & responsive Bootstrap UI
+✅ Real-time KPI visualization
+✅ Interactive charts for trends and returns
+✅ Intelligent action recommendations
+✅ One-click CSV & PDF exports
+✅ Lightweight & quick to set up locally
 
-Real-time KPI updates
-
-Easy-to-read trend and reason charts
-
-suggested actions
-
-One-click CSV & PDF export
-
-Lightweight and easy to run locally
-
-
-🏁 Author & Credits
+🧑‍💻 Author & Credits
 Developed by: Akshay Thorat
 Project: Spreetail MerchTech — Software Engineer II Assignment
 Year: 2025
+
