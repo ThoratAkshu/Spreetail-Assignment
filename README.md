@@ -96,7 +96,10 @@ It helps business and tech teams make **data-driven decisions** faster.
 
 )
 
-the graphical view have the features to unselct the listing of the graph for better presenttaion 
+💡 Note: The graphical view has the feature to unselect specific product lines or metrics on the chart, allowing analysts to focus on selected datasets for better visualization and presentation.
+
+<img width="952" height="383" alt="Screenshot 2025-10-26 232834" src="https://github.com/user-attachments/assets/b6d80244-5802-455a-b788-1f4d5a0c2950" />
+
 ---
 
 ### 🧮 1. KPI Summary
