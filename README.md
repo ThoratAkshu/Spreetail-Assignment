@@ -1,6 +1,6 @@
 # 🧾 Spreetail MerchTech Product Performance Dashboard
 
-A lightweight **Django-based analytics dashboard** that helps track and visualize **product performance** using sales, reviews, and return data.  
+A lightweight **Django-based analytics dashboard** that helps track and visualize **product performance** using sales, reviews, and return data.
 It provides **key performance indicators (KPIs)**, visual insights, and intelligent suggestions to help identify which products are excelling and which need attention.
 
 ---
@@ -9,123 +9,198 @@ It provides **key performance indicators (KPIs)**, visual insights, and intellig
 
 Follow these steps to set up and run the project locally.
 
+---
+
 ### 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/ThoratAkshu/Spreetail-Assignment.git
 cd Spreetail-Assignment
-2️⃣ Create and Activate a Virtual Environment
-bash
-Copy code
+```
+
+---
+
+### 2️⃣ Create and Activate a Virtual Environment
+
+```bash
 python -m venv venv_backend
-venv_backend\Scripts\activate       # On Windows
-# OR
-source venv_backend/bin/activate    # On macOS/Linux
-3️⃣ Install Dependencies
-bash
-Copy code
+```
+
+#### ▶️ Activate the environment:
+
+**On Windows:**
+
+```bash
+venv_backend\Scripts\activate
+```
+
+**On macOS/Linux:**
+
+```bash
+source venv_backend/bin/activate
+```
+
+---
+
+### 3️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
-4️⃣ Run Database Migrations
-bash
-Copy code
+```
+
+---
+
+### 4️⃣ Run Database Migrations
+
+```bash
 cd backend
-python manage.py makemigrations
+python manage.py makemigrations products
 python manage.py migrate
-5️⃣ Load the Dataset
-bash
-Copy code
+```
+
+---
+
+### 5️⃣ Load the Dataset
+
+```bash
 python manage.py load_kpis
+```
+
 This command will:
 
-Clear any old data
+* Clear any old data
+* Load the dataset from `sde2_merchtech_dataset.txt`
+* Aggregate sales, returns, and reviews
+* Automatically generate product insights and suggested actions
 
-Load the dataset from sde2_merchtech_dataset.txt
+---
 
-Aggregate sales, returns, and reviews
+### 6️⃣ Start the Development Server
 
-Automatically generate product insights and suggested actions
-
-6️⃣ Start the Development Server
-bash
-Copy code
+```bash
 python manage.py runserver
+```
+
 Then open your browser and go to:
-👉 http://127.0.0.1:8000/dashboard/
+👉 **[http://127.0.0.1:8000/dashboard/](http://127.0.0.1:8000/dashboard/)**
 
-📊 Dashboard Overview
+---
+
+## 📊 Dashboard Overview
+
 The dashboard provides a clean, interactive view of product performance metrics.
-It helps business and tech teams make data-driven decisions faster.
+It helps business and tech teams make **data-driven decisions** faster.
 
-🧮 1. KPI Summary
-At the top of the dashboard, you'll see the main performance metrics:
+📸 *Live Dashboard Snapshot:*
+![Dashboard Overview](<img width="1890" height="954" alt="image" src="https://github.com/user-attachments/assets/043bc3e3-578e-44a3-be30-0f35587fb3bd" />
+)
 
-Metric	Description
-💰 Total GMV	Overall sales revenue
-⭐ Average Rating	Average product rating from all reviews
-⚠️ Total Returns (%)	Percentage of items returned
-🛍️ Units Sold	Total quantity of products sold
+---
 
-Each card includes trend indicators (↑ / ↓) comparing performance with the previous week.
+### 🧮 1. KPI Summary
 
-📸 Example Snapshot:
+At the top of the dashboard, you’ll see the main performance metrics:
 
-📈 2. GMV Trend by Week
-Displays a line chart showing weekly GMV (Gross Merchandise Value).
-This helps you analyze how sales evolve week over week.
+| Metric                   | Description                             |
+| :----------------------- | :-------------------------------------- |
+| 💰 **Total GMV**         | Overall sales revenue                   |
+| ⭐ **Average Rating**     | Average product rating from all reviews |
+| ⚠️ **Total Returns (%)** | Percentage of items returned            |
+| 🛍️ **Units Sold**       | Total quantity of products sold         |
 
-📸 Example:
+Each card includes **trend indicators (↑ / ↓)** comparing performance with the previous week.
 
-🔁 3. Return Reason Breakdown
-A doughnut chart highlights the most common return reasons such as:
+📸 *Example Snapshot:*
+![KPI Snapshot](334f16b9-ce74-474b-ae89-757a62fa1653.png)
 
-Damaged Item
+---
 
-Late Delivery
+### 📈 2. GMV Trend by Product
 
-Wrong Item Sent
+Displays a **line chart** showing weekly GMV (Gross Merchandise Value).
+This helps analyze how sales evolve week over week.
 
-Size Mismatch
+📸 *Example:*
+![GMV Trend](cb220b55-ea05-43b6-b228-9daacec102d9.png)
 
-📸 Example:
+**💡 Note:** While unselecting any chart metric, the analytics recalculates the results dynamically to focus on the selected dataset only — helping analysts to perform deeper performance segmentation.
 
-🧾 4. Product Insights Table
-Each product includes:
+---
 
-ASIN & Product Name
+### 🔁 3. Return Reason Breakdown
 
-GMV, Rating & Returns
+A **doughnut chart** highlights the most common return reasons such as:
 
-Return issue breakdown
+* Damaged Item
+* Late Delivery
+* Wrong Item Sent
+* Size Mismatch
 
-Suggested corrective actions
+📸 *Example:*
+![Return Reasons](cb220b55-ea05-43b6-b228-9daacec102d9.png)
 
-Product	GMV	Rating	Returns	Common Issues	Suggested Action
-Vacuum Cleaner	$4,095	2.8	6.5%	Late Delivery — 6	Optimize delivery partners and tracking
-Office Chair	$3,978	3.0	8.0%	Damaged Item — 4	Improve packaging and QA
+---
 
-📸 Example:
+### 🧾 4. Product Insights Table
 
-🧠 5. Automated Suggestions
-The system reads reviews and return reasons to generate meaningful insights.
+Each product entry includes:
 
-Condition	Suggested Action
-Low Rating (<3)	Investigate product quality or recurring complaints
-“Late Delivery” in reviews	Optimize logistics & courier partners
-“Defective Item” in returns	Strengthen pre-shipment testing & QC
+* ASIN & Product Name
+* GMV, Rating & Returns
+* Return issue breakdown
+* Suggested corrective actions
 
-📸 Example:
+| Product        | GMV    | Rating | Returns | Common Issues     | Suggested Action                        |
+| :------------- | :----- | :----- | :------ | :---------------- | :-------------------------------------- |
+| Vacuum Cleaner | $4,095 | 2.8    | 6.5%    | Late Delivery — 6 | Optimize delivery partners and tracking |
+| Office Chair   | $3,978 | 3.0    | 8.0%    | Damaged Item — 4  | Improve packaging and QA                |
 
-📤 6. Export Reports
-Easily export your reports for analysis or sharing:
+📸 *Example:*
+![Product Insights](334f16b9-ce74-474b-ae89-757a62fa1653.png)
 
-📊 CSV Export → Tabular KPIs and issue breakdown
+---
 
-🧾 PDF Export → Styled report with formatted tables and text wrapping
+### 🧠 5. Automated Suggestions
 
-📸 Example:
+The system reads **reviews and return reasons** to generate meaningful insights.
 
-📂 Project Structure
-bash
-Copy code
+| Condition                   | Suggested Action                                    |
+| :-------------------------- | :-------------------------------------------------- |
+| Low Rating (<3)             | Investigate product quality or recurring complaints |
+| “Late Delivery” in reviews  | Optimize logistics & courier partners               |
+| “Defective Item” in returns | Strengthen pre-shipment testing & QC                |
+
+---
+
+### 📤 6. Export Reports
+
+Easily export reports for analysis or sharing:
+
+* 📊 **CSV Export** → Tabular KPIs and issue breakdown
+* 🧾 **PDF Export** → Styled report with formatted tables and text wrapping
+
+📸 *Example:*
+![Exports](b630468c-f339-4045-aba5-7de4110eeec0.png)
+
+---
+
+## 💻 Tech Stack
+
+| Category                   | Technology            |
+| :------------------------- | :-------------------- |
+| **Backend Framework**      | Django (Python)       |
+| **Frontend**               | HTML, CSS, Bootstrap  |
+| **Charts & Visualization** | Chart.js              |
+| **Data Handling**          | Pandas                |
+| **Exports**                | CSV & ReportLab (PDF) |
+| **Database**               | SQLite (default)      |
+| **Version Control**        | Git + GitHub          |
+
+---
+
+## 📂 Project Structure
+
+```bash
 Spreetail-Assignment/
 │
 ├── backend/
@@ -144,16 +219,27 @@ Spreetail-Assignment/
 │
 ├── requirements.txt
 └── README.md
-🚀 Key Highlights
-✅ Clean & responsive Bootstrap UI
-✅ Real-time KPI visualization
-✅ Interactive charts for trends and returns
-✅ Intelligent action recommendations
-✅ One-click CSV & PDF exports
-✅ Lightweight & quick to set up locally
+```
 
-🧑‍💻 Author & Credits
-Developed by: Akshay Thorat
-Project: Spreetail MerchTech — Software Engineer II Assignment
-Year: 2025
+---
 
+## 🚀 Key Highlights
+
+✅ Clean & responsive **Bootstrap UI**
+✅ Real-time **KPI visualization**
+✅ Interactive charts for **trends and returns**
+✅ Intelligent **action recommendations**
+✅ One-click **CSV & PDF exports**
+✅ Lightweight & quick to **set up locally**
+
+---
+
+## 🧑‍💻 Author & Credits
+
+**Developed by:** [Akshay Thorat](https://github.com/ThoratAkshu)
+**Project:** Spreetail MerchTech — Software Engineer II Assignment
+**Year:** 2025
+
+---
+
+⭐ *If you find this project helpful, don’t forget to give it a star on GitHub!* 🌟
