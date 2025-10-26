@@ -235,4 +235,3 @@ Spreetail-Assignment/
 
 ---
 
-⭐ *If you find this project helpful, don’t forget to give it a star on GitHub!* 🌟
