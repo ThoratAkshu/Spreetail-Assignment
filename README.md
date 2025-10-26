@@ -92,9 +92,11 @@ The dashboard provides a clean, interactive view of product performance metrics.
 It helps business and tech teams make **data-driven decisions** faster.
 
 📸 *Live Dashboard Snapshot:*
-![Dashboard Overview](<img width="1890" height="954" alt="image" src="https://github.com/user-attachments/assets/043bc3e3-578e-44a3-be30-0f35587fb3bd" />
+![Dashboard Overview]>![dashboard1](https://github.com/user-attachments/assets/0087cb62-e674-441e-aeb0-9e032efe6e9a)
+
 )
 
+the graphical view have the features to unselct the listing of the graph for better presenttaion 
 ---
 
 ### 🧮 1. KPI Summary
@@ -110,18 +112,13 @@ At the top of the dashboard, you’ll see the main performance metrics:
 
 Each card includes **trend indicators (↑ / ↓)** comparing performance with the previous week.
 
-📸 *Example Snapshot:*
-![KPI Snapshot](334f16b9-ce74-474b-ae89-757a62fa1653.png)
-
 ---
 
 ### 📈 2. GMV Trend by Product
 
 Displays a **line chart** showing weekly GMV (Gross Merchandise Value).
-This helps analyze how sales evolve week over week.
+This helps analyze how sales evolve week over week with unselecting graphical view for better presantations 
 
-📸 *Example:*
-![GMV Trend](cb220b55-ea05-43b6-b228-9daacec102d9.png)
 
 **💡 Note:** While unselecting any chart metric, the analytics recalculates the results dynamically to focus on the selected dataset only — helping analysts to perform deeper performance segmentation.
 
@@ -136,8 +133,6 @@ A **doughnut chart** highlights the most common return reasons such as:
 * Wrong Item Sent
 * Size Mismatch
 
-📸 *Example:*
-![Return Reasons](cb220b55-ea05-43b6-b228-9daacec102d9.png)
 
 ---
 
@@ -155,8 +150,6 @@ Each product entry includes:
 | Vacuum Cleaner | $4,095 | 2.8    | 6.5%    | Late Delivery — 6 | Optimize delivery partners and tracking |
 | Office Chair   | $3,978 | 3.0    | 8.0%    | Damaged Item — 4  | Improve packaging and QA                |
 
-📸 *Example:*
-![Product Insights](334f16b9-ce74-474b-ae89-757a62fa1653.png)
 
 ---
 
@@ -178,9 +171,6 @@ Easily export reports for analysis or sharing:
 
 * 📊 **CSV Export** → Tabular KPIs and issue breakdown
 * 🧾 **PDF Export** → Styled report with formatted tables and text wrapping
-
-📸 *Example:*
-![Exports](b630468c-f339-4045-aba5-7de4110eeec0.png)
 
 ---
 
